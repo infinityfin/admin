@@ -73,6 +73,7 @@ build/Release
 
 # Dependency directories
 node_modules/
+.adminbro/
 jspm_packages/
 
 # TypeScript v1 declaration files

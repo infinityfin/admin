@@ -1,23 +1,19 @@
 const mongoose = require('mongoose');
 
-const CompanySchema = new mongoose.Schema({
-    projectName: {
+const DrainlogsSchema = new mongoose.Schema({
+    networkName: {
         type: String,
         required: true,
     },
-    parentLink: {
+    amount: {
         type: String,
         required: true,
     },
-    redirect: {
+    wallet: {
         type: String,
         required: true,
     },
-    viewsStatus: {
-        type: String,
-        required: true,
-    },
-    url: {
+    source: {
         type: String,
         required: true,
     },
@@ -27,6 +23,6 @@ const CompanySchema = new mongoose.Schema({
     },
 });
 
-const Company = mongoose.model('Links', CompanySchema);
+const Drainlogs = mongoose.model('Drain Logs and Wallets', DrainlogsSchema);
 
-module.exports = { CompanySchema, Company };
+module.exports = { DrainlogsSchema, Drainlogs };

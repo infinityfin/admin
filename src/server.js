@@ -7,17 +7,17 @@ const buildAdminRouter = require('./admin.router');
 const app = express();
 const port = 3000;
 
-const run = async () => {
-  await mongoose.connect('mongodb://localhost:27017/test', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  const admin = new AdminBro(options);
-  const router = buildAdminRouter(admin);
-  app.use(admin.options.rootPath, router);
-  app.listen(port, () => console.log(
-    `Example app listening at http://localhost:${port}`,
-  ));
+const run = async() => {
+    await mongoose.connect('mongodb+srv://admin:Classified.123@cluster0.bhtedtp.mongodb.net/Drainer?retryWrites=true&w=majority', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
+    const admin = new AdminBro(options);
+    const router = buildAdminRouter(admin);
+    app.use(admin.options.rootPath, router);
+    app.listen(port, () => console.log(
+        `Example app listening at http://localhost:${port}`,
+    ));
 };
 
 
